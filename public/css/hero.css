@@ -1,0 +1,544 @@
+/* =====================================================
+   Hero (Tab 1: About Buzzie Bee — 3D Layered Collage)
+===================================================== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-height) + 1.5rem) 0 2.5rem;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.36) 0%,
+      rgba(255, 255, 255, 0.14) 55%,
+      rgba(255, 255, 255, 0.24) 100%
+    ),
+    url("/assets/bg-seamless-web.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  perspective: 1400px;
+  overflow-x: clip;
+}
+
+/* Soft white horizontal wash from right edge across hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-collage-grid {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  transform-style: preserve-3d;
+}
+
+/* Left Brand Column (Mid Z-layer, top aligned with hex-pos-1) */
+.collage-brand-col {
+  position: relative;
+  align-self: flex-start;
+  margin-left: clamp(1.5rem, 4.5vw, 5.5rem);
+  flex-shrink: 0;
+  transform: translate3d(0, 0, 20px);
+  z-index: 10;
+  width: clamp(310px, 30vw, 450px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem 1.5rem;
+}
+
+.collage-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.45rem;
+  width: 100%;
+}
+
+.collage-wordmark-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(250px, 27vw, 370px);
+}
+
+.collage-wordmark {
+  width: 100%;
+  height: auto;
+}
+
+.collage-by-text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  letter-spacing: 0.01em;
+  color: #16181c;
+  margin-top: 0.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.collage-sam-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(140px, 16vw, 205px);
+}
+
+.collage-sam-wrap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 175%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.65) 36%,
+    rgba(255, 255, 255, 0.22) 60%,
+    rgba(255, 255, 255, 0) 74%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.collage-sam-name {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+}
+
+.hero-socials {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.hero-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 6px 18px rgba(18, 30, 46, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition:
+    transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.hero-social-btn:hover {
+  transform: translateY(-2px);
+  background: var(--btn-purple);
+  border-color: var(--btn-purple);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(146, 121, 237, 0.42);
+}
+
+/* =====================================================
+   Say Hello Contact Form Card (Below Hero Socials)
+===================================================== */
+.say-hello-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: 1.45rem;
+  padding: 1.35rem 1.4rem;
+  text-align: left;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 254, 249, 0.56) 0%,
+    rgba(248, 251, 255, 0.44) 100%
+  );
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 20px;
+  box-shadow:
+    0 16px 38px rgba(18, 30, 46, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.say-hello-header {
+  margin-bottom: 0.95rem;
+}
+
+.say-hello-header h2 {
+  font-family: var(--font-display);
+  font-size: 1.38rem;
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.say-hello-sub {
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
+
+.say-hello-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hello-category-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hello-label {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.hello-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.hello-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0.4rem 0.78rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.55);
+  color: #2c3540;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    background-color 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hello-pill:hover {
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(26, 31, 38, 0.18);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.hello-pill.is-active {
+  background: rgba(253, 216, 101, 0.92);
+  border-color: #c89400;
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(245, 197, 24, 0.28);
+}
+
+.hello-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.hello-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.hello-input {
+  width: 100%;
+  min-height: 40px;
+  padding: 0.52rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.68);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.45;
+  box-shadow: inset 0 1px 2px rgba(18, 30, 46, 0.05);
+  transition: background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.hello-input::placeholder {
+  color: #5b6470;
+  opacity: 0.92;
+  transition: opacity 0.22s ease;
+}
+
+.hello-input:focus-visible {
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--btn-purple);
+  box-shadow: 0 0 0 3px rgba(146, 121, 237, 0.22);
+}
+
+.hello-input[aria-invalid="true"] {
+  border-color: #c83e3e;
+  box-shadow: 0 0 0 3px rgba(200, 62, 62, 0.14);
+}
+
+.hello-textarea {
+  resize: vertical;
+  min-height: 82px;
+}
+
+.hello-error {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid rgba(180, 35, 24, 0.2);
+  border-radius: 10px;
+  padding: 0.5rem 0.72rem;
+}
+
+.hello-submit-btn {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.72rem 1.35rem;
+  font-size: 0.96rem;
+}
+
+/* Celebratory On-Screen Thank-You Card */
+.hello-thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0.25rem 0.45rem;
+  animation: helloThanksReveal 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hello-thanks[hidden],
+#say-hello-form-view[hidden],
+.hello-error[hidden] {
+  display: none;
+}
+
+@keyframes helloThanksReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hello-thanks-emblem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: helloEmblemPop 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes helloEmblemPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.76);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hello-thanks-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.hello-thanks-copy {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  max-width: 34ch;
+}
+
+.hello-thanks-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.hello-thanks-btn {
+  min-height: 40px;
+  padding: 0.56rem 1.05rem;
+  font-size: 0.88rem;
+}
+
+.hello-reset-link {
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #5d42c7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  transition: color 0.16s ease, background-color 0.16s ease;
+}
+
+.hello-reset-link:hover {
+  color: #3f289e;
+  background: rgba(146, 121, 237, 0.1);
+}
+
+/* Center Polaroid (Front of Z-axis, sized to sit cleanly between brand col and honeycomb) */
+.collage-polaroid-col {
+  position: absolute;
+  left: 48.5%;
+  top: 0.5rem;
+  transform: translate3d(-50%, 0, 60px);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.polaroid-frame {
+  position: relative;
+  width: clamp(199px, 18.9vw, 308px);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-frame::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 145%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.76) 0%,
+    rgba(255, 255, 255, 0.45) 40%,
+    rgba(255, 255, 255, 0.14) 64%,
+    rgba(255, 255, 255, 0) 76%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.polaroid-photo-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 1850 / 3200;
+  overflow: hidden;
+}
+
+.polaroid-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 48%;
+}
+
+/* Right Diagonal Honeycomb Collage (Back Z-layer) */
+.collage-honeycomb-col {
+  position: relative;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+  margin-left: auto;
+  padding-right: clamp(0.5rem, 1.8vw, 2rem);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.honeycomb-picture {
+  display: contents;
+}
+
+.honeycomb-graphic {
+  width: clamp(560px, 59vw, 1080px);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 14px rgba(15, 25, 38, 0.24));
+  animation: hexRiseFloat 1.15s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes hexRiseFloat {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 44px, 0) scale(0.94);
+  }
+  70% {
+    opacity: 1;
+    transform: translate3d(0, -4px, 0) scale(1.005);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}

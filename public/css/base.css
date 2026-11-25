@@ -1,0 +1,142 @@
+/* =====================================================
+   Base Reset, Design Tokens & Shared Primitives
+===================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-display: 'Teachers', system-ui, -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --canvas: #fffef9;
+  --canvas-warm: #f8f4ef;
+  --ink: #1a1f26;
+  --ink-muted: #4b5563;
+  --honey: #f5c518;
+  --honey-soft: #fdd865;
+  --btn-purple: #9279ed;
+  --btn-purple-hover: #7d61e6;
+  --hairline: rgba(26, 31, 38, 0.1);
+
+  /* Translucent navigation tokens (dark theme default for secondary tabs 2–5) */
+  --nav-glass-bg: rgba(22, 34, 50, 0.78);
+  --nav-glass-border: rgba(195, 214, 232, 0.24);
+  --tab-text: #c2d6e8;
+  --tab-text-hover: #ddeaf6;
+  --tab-text-active: #eef5fc;
+  --tab-active-bg: rgba(194, 214, 232, 0.17);
+  --nav-height: 70px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.65;
+  color: var(--ink);
+  background-color: var(--canvas-warm);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--honey);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - 2.5rem, 760px);
+  margin-inline: auto;
+}
+
+.wide-container {
+  width: min(100% - 2.5rem, 1060px);
+}
+
+/* =====================================================
+   Shared Buttons & Inline Links
+===================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.82rem 1.55rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background: var(--btn-purple);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(146, 121, 237, 0.38);
+}
+
+.btn.primary:hover {
+  background: var(--btn-purple-hover);
+  box-shadow: 0 6px 18px rgba(146, 121, 237, 0.52);
+}
+
+.btn.outline-dark {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid rgba(26, 31, 38, 0.28);
+}
+
+.btn.outline-dark:hover {
+  background: rgba(26, 31, 38, 0.05);
+  border-color: var(--ink);
+}
+
+.email-link {
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--honey);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.email-link:hover {
+  text-decoration-color: var(--ink);
+}

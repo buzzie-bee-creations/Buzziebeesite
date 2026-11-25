@@ -1,0 +1,234 @@
+/* =====================================================
+   Responsive Breakpoints & Accessibility Preferences
+===================================================== */
+@media (max-width: 1260px) {
+  .collage-brand-col {
+    margin-left: clamp(1rem, 2.5vw, 2.25rem);
+    width: clamp(295px, 31vw, 370px);
+    padding: 0 0.5rem 1.5rem;
+  }
+
+  .collage-polaroid-col {
+    left: 49%;
+  }
+
+  .honeycomb-graphic {
+    width: clamp(500px, 57vw, 680px);
+  }
+
+  .site-nav-inner {
+    gap: 0.75rem;
+    padding: 0.55rem 1.25rem;
+  }
+
+  .tab-bar {
+    gap: 0.2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 0.55rem 0.8rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    perspective: none;
+    padding: calc(var(--nav-height) + 1.75rem) 1.5rem 2.75rem;
+  }
+
+  .hero-collage-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.25rem;
+    padding-block: 0.5rem;
+    transform-style: flat;
+  }
+
+  .collage-brand-col,
+  .collage-polaroid-col,
+  .collage-honeycomb-col {
+    position: static;
+    transform: none;
+  }
+
+  .collage-brand-col {
+    max-width: 520px;
+    margin-inline: auto;
+    width: 100%;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .say-hello-card {
+    max-width: 480px;
+  }
+
+  .collage-polaroid-col {
+    padding-top: 0.5rem;
+  }
+
+  .polaroid-frame {
+    width: clamp(231px, 56vw, 308px);
+  }
+
+  .collage-honeycomb-col {
+    margin-left: 0;
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  .honeycomb-graphic {
+    width: clamp(320px, 78vw, 430px);
+  }
+}
+
+@media (max-width: 900px) {
+  .pillars-grid,
+  .book-features-grid,
+  .approach-band {
+    grid-template-columns: 1fr;
+  }
+
+  .approach-band {
+    gap: 1.5rem;
+  }
+
+  .contact-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --nav-height: 60px;
+  }
+
+  .site-nav-inner {
+    padding: 0.4rem 0.65rem;
+    gap: 0.5rem;
+    justify-content: center;
+    border-radius: 0;
+  }
+
+  .nav-brand {
+    display: none;
+  }
+
+  .tab-bar {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    font-size: 0.84rem;
+    padding: 0.62rem 0.72rem;
+    flex: 0 0 auto;
+    text-align: center;
+  }
+
+  .tab-btn::after {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .hero {
+    padding: calc(var(--nav-height) + 1.5rem) 1rem 2.5rem;
+  }
+
+  .collage-wordmark-wrap {
+    width: clamp(210px, 68vw, 290px);
+  }
+
+  .honeycomb-graphic {
+    width: clamp(270px, 84vw, 340px);
+  }
+
+  .hexagon {
+    padding: 3.2rem 2rem;
+  }
+
+  .orgs {
+    font-size: 0.8rem;
+  }
+
+  .orgs li span {
+    font-size: 0.74rem;
+  }
+
+  .say-hello-card {
+    padding: 1.2rem 1.05rem;
+    border-radius: 16px;
+  }
+
+  .hello-pill {
+    min-height: 44px;
+    padding: 0.48rem 0.85rem;
+  }
+
+  .hello-input {
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .emotogotchi-frame-wrap {
+    height: clamp(540px, 75dvh, 720px);
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hello-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hexagon {
+    padding: 3.4rem 1.75rem;
+  }
+
+  .orgs {
+    font-size: 0.76rem;
+    line-height: 1.32;
+  }
+
+  .orgs li {
+    margin-bottom: 0.58rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tab-panel,
+  .tab-btn,
+  .tab-btn::after,
+  .btn,
+  .hero-social-btn,
+  .honeycomb-graphic,
+  .hello-pill,
+  .hello-thanks,
+  .hello-thanks-emblem {
+    animation: none;
+    transition: none;
+  }
+}

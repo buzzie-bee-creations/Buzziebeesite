@@ -1,0 +1,169 @@
+/* =====================================================
+   Translucent Top Tab Navigation (Full Width)
+===================================================== */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.site-nav-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.55rem 2rem;
+  background: var(--nav-glass-bg);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+  border-bottom: 1px solid var(--nav-glass-border);
+  box-shadow:
+    0 8px 24px rgba(10, 18, 30, 0.18),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Light translucent bar used on Tab 1 ("About Buzzie Bee") */
+.site-nav.is-light .site-nav-inner {
+  background: rgba(248, 251, 255, 0.8);
+  border-bottom-color: rgba(108, 134, 160, 0.22);
+  box-shadow:
+    0 6px 22px rgba(24, 38, 56, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0.15rem 0.25rem;
+  border-radius: 10px;
+  transition: opacity 0.18s ease;
+}
+
+.nav-brand:hover {
+  opacity: 0.82;
+}
+
+.nav-brand-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.site-nav.is-light .nav-brand-icon {
+  filter: none;
+}
+
+.tab-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.tab-btn {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.01em;
+  color: var(--tab-text);
+  padding: 0.62rem 1.1rem;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.28rem;
+  height: 2.5px;
+  border-radius: 999px;
+  background: var(--btn-purple);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-btn:hover {
+  color: var(--tab-text-hover);
+  background: rgba(194, 214, 232, 0.1);
+}
+
+.tab-btn.is-active {
+  color: var(--tab-text-active);
+  background: var(--tab-active-bg);
+}
+
+.tab-btn.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Light tab states on Tab 1 */
+.site-nav.is-light .tab-btn {
+  color: #5c7691;
+}
+
+.site-nav.is-light .tab-btn:hover {
+  color: #3d5670;
+  background: rgba(120, 148, 178, 0.12);
+}
+
+.site-nav.is-light .tab-btn.is-active {
+  color: #2d445c;
+  background: rgba(146, 121, 237, 0.13);
+}
+
+.nav-cta {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: var(--btn-purple);
+  padding: 0.56rem 1.15rem;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 3px 12px rgba(146, 121, 237, 0.32);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  background: var(--btn-purple-hover);
+  box-shadow: 0 5px 16px rgba(146, 121, 237, 0.45);
+}
+
+/* =====================================================
+   Tab Panel Visibility & Transition
+===================================================== */
+.tab-panel {
+  animation: panelFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-panel[hidden] {
+  display: none;
+}
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,812 @@
+/* =====================================================
+   Secondary Tab Scenic Banner (Tabs 2–5)
+===================================================== */
+.tab-banner {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--nav-height) + 3.25rem) 1.5rem 3.25rem;
+  background-image:
+    linear-gradient(to bottom, rgba(16, 26, 38, 0.34), rgba(16, 26, 38, 0.56)),
+    url("/assets/bg-seamless-web.jpg");
+  background-size: cover;
+  background-position: center 48%;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+}
+
+.tab-banner-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 760px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.banner-sam-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(140px, 18vw, 190px);
+  margin-bottom: 0.35rem;
+}
+
+.banner-sam-wrap::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 175%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.65) 36%,
+    rgba(255, 255, 255, 0.22) 60%,
+    rgba(255, 255, 255, 0) 74%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.banner-sam-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+}
+
+.banner-bee-img {
+  width: 78px;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.tab-banner-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  text-wrap: balance;
+}
+
+.tab-banner-subtitle {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(0.98rem, 2vw, 1.12rem);
+  color: #e4eef7;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+}
+
+/* =====================================================
+   Tab 1: About Buzzie Bee Overview
+===================================================== */
+.buzzie-overview {
+  padding: 5rem 0 3.5rem;
+  background: var(--canvas);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-kicker {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #4a647c;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.01em;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.8vw, 2.55rem);
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.section-lead {
+  font-size: 1.08rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.pillar-card {
+  background: #ffffff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pillar-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #8a6a00;
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.pillar-card p {
+  font-size: 0.98rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+.pillar-card-links {
+  margin-top: auto;
+  padding-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.95rem;
+}
+
+.overview-card-link {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.93rem;
+  color: #5d42c7;
+  padding: 0.25rem 0;
+  transition: color 0.16s ease, transform 0.16s ease;
+}
+
+.overview-card-link:hover {
+  color: #3f289e;
+  transform: translateX(2px);
+}
+
+.approach-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+  gap: 2.5rem;
+  align-items: start;
+  padding: 2.75rem 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 3rem;
+}
+
+.approach-copy h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+.approach-copy p {
+  color: var(--ink-muted);
+  font-size: 1rem;
+}
+
+.approach-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.approach-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.approach-list strong {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.approach-list span {
+  font-size: 0.96rem;
+  color: var(--ink-muted);
+}
+
+.contact-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.25rem;
+  background: #f6f2e8;
+  border-radius: 16px;
+  border: 1px solid rgba(26, 31, 38, 0.08);
+}
+
+.contact-strip-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.contact-strip-text p {
+  color: var(--ink-muted);
+  font-size: 1rem;
+  max-width: 520px;
+}
+
+.contact-strip-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   Tab: Safe Foods
+===================================================== */
+.safe-foods-panel {
+  position: relative;
+  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100dvh - var(--nav-height));
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+    url("/assets/aistudio/Background_e61e84e4.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.safe-foods-section {
+  padding: 3.25rem 0 4.5rem;
+}
+
+.safe-foods-controls {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  padding: 1.4rem 1.65rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(26, 31, 38, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(18, 30, 46, 0.07);
+}
+
+.safe-foods-prompt {
+  font-size: 1.04rem;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 1.15rem;
+}
+
+.safe-foods-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.safe-foods-print-fallback {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(26, 31, 38, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.safe-foods-print-fallback[hidden] {
+  display: none;
+}
+
+.safe-foods-print-fallback p {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  max-width: 54ch;
+  line-height: 1.5;
+}
+
+.safe-foods-download-btn {
+  padding: 0.64rem 1.25rem;
+  font-size: 0.94rem;
+}
+
+.safe-foods-sheet {
+  /* Percentage-based overlay coordinates — adjust these tokens to nudge alignment */
+  --sf-col-1-left: 19.6%;
+  --sf-col-1-width: 28.6%;
+  --sf-col-2-left: 61.5%;
+  --sf-col-2-width: 25.1%;
+  --sf-input-height: 4.5%;
+
+  --sf-row-1-top: 23.3%;
+  --sf-row-2-top: 38.6%;
+  --sf-row-3-top: 53.6%;
+  --sf-row-4-top: 68.6%;
+  --sf-row-5-top: 83.8%;
+
+  position: relative;
+  width: min(100%, 740px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(26, 31, 38, 0.1);
+  overflow: hidden;
+  box-shadow: 0 18px 46px rgba(18, 30, 46, 0.12);
+  container-type: inline-size;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.safe-foods-template-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.safe-foods-input {
+  position: absolute;
+  height: var(--sf-input-height);
+  padding: 0 0.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 2.35cqi, 1.18rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: #2c3748;
+  caret-color: var(--btn-purple);
+  touch-action: manipulation;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.safe-foods-input:hover {
+  background: rgba(146, 121, 237, 0.05);
+}
+
+.safe-foods-input:focus {
+  outline: none;
+  background: rgba(146, 121, 237, 0.08);
+  box-shadow: inset 0 -2px 0 rgba(146, 121, 237, 0.55);
+}
+
+.sf-col-1 {
+  left: var(--sf-col-1-left);
+  width: var(--sf-col-1-width);
+}
+
+.sf-col-2 {
+  left: var(--sf-col-2-left);
+  width: var(--sf-col-2-width);
+}
+
+.sf-row-1 { top: var(--sf-row-1-top); }
+.sf-row-2 { top: var(--sf-row-2-top); }
+.sf-row-3 { top: var(--sf-row-3-top); }
+.sf-row-4 { top: var(--sf-row-4-top); }
+.sf-row-5 { top: var(--sf-row-5-top); }
+
+@page {
+  margin: 0.4in;
+}
+
+@media print {
+  html,
+  body {
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  main {
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .site-nav,
+  footer,
+  .tab-banner,
+  .wordmark-divider,
+  .safe-foods-controls,
+  .safe-foods-print-fallback,
+  .tab-panel:not(#panel-safe-foods) {
+    display: none !important;
+  }
+
+  #panel-safe-foods {
+    display: block !important;
+    min-height: 0 !important;
+    background: #ffffff !important;
+    animation: none !important;
+  }
+
+  .safe-foods-section {
+    padding: 0 !important;
+  }
+
+  .safe-foods-section > .container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .safe-foods-sheet {
+    width: min(100%, 7in);
+    margin: 0 auto;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .safe-foods-template-img {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .safe-foods-input {
+    color: #2c3748 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* =====================================================
+   Tab 2: Get to Know Sam ("About Me")
+===================================================== */
+.about {
+  padding: 4.5rem 0 3.5rem;
+  background: var(--canvas);
+}
+
+.about-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.bee-accent {
+  width: 96px;
+}
+
+.about h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.5vw, 2.35rem);
+  font-weight: 800;
+}
+
+.about .intro {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto 2.75rem;
+  font-size: 1.08rem;
+  color: var(--ink-muted);
+}
+
+.hexagon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.75rem;
+}
+
+.hexagon {
+  background: var(--honey-soft);
+  width: min(100%, 480px);
+  padding: 4.5rem 3.5rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.orgs {
+  list-style: none;
+  font-size: 0.88rem;
+  line-height: 1.38;
+}
+
+.orgs li {
+  margin-bottom: 0.72rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.orgs li:last-child {
+  margin-bottom: 0;
+}
+
+.orgs li strong {
+  font-weight: 700;
+  color: #111;
+}
+
+.orgs li span {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgba(17, 17, 17, 0.82);
+}
+
+.closing {
+  text-align: center;
+  font-size: 1.12rem;
+  font-weight: 500;
+  max-width: 520px;
+  margin: 0 auto 1.75rem;
+  line-height: 1.6;
+}
+
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* =====================================================
+   Tab 4: Kitchen Survival Guide (Book)
+===================================================== */
+.book {
+  padding: 4.75rem 0 3.75rem;
+  background: linear-gradient(160deg, #fffaf0 0%, #f6f1e6 100%);
+}
+
+.book-showcase {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 3.5rem;
+}
+
+.book h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.16;
+  margin-bottom: 1.1rem;
+  text-wrap: balance;
+}
+
+.book-badge-link {
+  display: inline-block;
+  margin: 0 auto 1.35rem;
+  border-radius: 50%;
+}
+
+.book-badge-img {
+  width: clamp(190px, 28vw, 260px);
+  height: auto;
+  filter: drop-shadow(0 8px 20px rgba(26, 31, 38, 0.14));
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.book-badge-link:hover .book-badge-img,
+.book-badge-link:focus-visible .book-badge-img {
+  transform: translateY(-10px) scale(1.07);
+  filter: drop-shadow(0 18px 30px rgba(26, 31, 38, 0.24));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-badge-img {
+    transition: none;
+  }
+
+  .book-badge-link:hover .book-badge-img,
+  .book-badge-link:focus-visible .book-badge-img {
+    transform: none;
+  }
+}
+
+.book-lead {
+  font-size: 1.18rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+  line-height: 1.6;
+}
+
+.book-sub {
+  font-size: 1.06rem;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+}
+
+.book-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.book-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.book-feature {
+  background: #ffffff;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.book-feature h3 {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.book-feature p {
+  font-size: 0.97rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+.book-recipe-card {
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  overflow: hidden;
+  align-self: start;
+}
+
+.book-recipe-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =====================================================
+   Tab 5: Emotogotchi Mood Logging Tool
+===================================================== */
+.emotogotchi-section {
+  padding: 4.5rem 0 3.75rem;
+  background: var(--canvas);
+}
+
+.emotogotchi-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.emotogotchi-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.8vw, 2.55rem);
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.emotogotchi-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.emotogotchi-frame-wrap {
+  width: 100%;
+  height: clamp(620px, 78vh, 840px);
+  background: #e9f0f7;
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(18, 30, 46, 0.1);
+}
+
+.emotogotchi-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* =====================================================
+   Wordmark Divider & Footer
+===================================================== */
+.wordmark-divider {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem 3.25rem;
+  background: var(--canvas);
+}
+
+.wordmark-divider.warm-divider {
+  background: #f6f1e6;
+}
+
+.wordmark-divider img {
+  width: clamp(200px, 30vw, 300px);
+}
+
+footer {
+  padding: 3rem 1rem;
+  background: #181c22;
+  color: #f5f5f5;
+  text-align: center;
+  position: relative;
+}
+
+.footer-logo {
+  width: 126px;
+  margin: 0 auto 1.25rem;
+  background: #fff;
+  border-radius: 20px;
+  padding: 0.75rem;
+}
+
+footer p {
+  margin-bottom: 0.35rem;
+}
+
+footer .small {
+  font-size: 0.92rem;
+  color: #c8d3de;
+}
+
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sb-watermark {
+  width: 92px;
+  margin: 1.5rem auto 0;
+  opacity: 0.5;
+  filter: invert(1);
+}
